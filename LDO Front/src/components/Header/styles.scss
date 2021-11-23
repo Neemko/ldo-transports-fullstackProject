@@ -1,0 +1,305 @@
+//mobile first
+.header {
+  background: linear-gradient(45deg,rgba(18,67,86,.87),rgb(250 251 255 / 49%));
+  width: 100%;
+  display: flex;
+  position: relative;
+  position: fixed;
+  z-index: 10;
+  &-burger {
+    margin-top: 2rem;
+  }
+}
+
+.menu-connected {
+  display: none;
+}
+
+.logo-link {
+  padding: 1rem 0;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+}
+
+.logo {
+  width: auto;
+  height: 100%;
+  animation: popLogo 5s;
+}
+
+.navBar {
+  position : absolute;
+  background-color: rgb(222, 221, 226);
+  border-radius: 0 0 5px 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 6.25rem;
+  margin-left : 0rem;
+
+  &_hidden {
+    display: none
+  }
+  
+  &_appear {
+    animation: translateMenu 1s;
+  }
+
+  &-link {
+    padding: 0.3rem;
+    margin: 0.5rem 0;
+  }
+
+  &-link--selected {
+    border-bottom: 2px solid #aca2a1;
+
+  }
+  // &_disappear {
+  //   animation: translateMenu 1s;
+  // }
+
+  &-connected {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: rgb(222, 221, 226);
+    border-radius: 5px;
+    padding: 0.5rem;
+
+    &-user {
+      display: flex;
+      padding: 0.5rem;
+      &-icon {
+        margin-right: .5rem;    
+      }
+    }
+
+    &-deconnexion-button {
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+    }
+  } 
+}
+
+.hamburger {
+  margin-left: 2rem;
+  font-size: 3em;
+  color: white;
+
+  &_open {
+    transform: rotate(90deg);
+    transition-duration: 1s;
+  }
+
+  &_close {
+    transform: rotate(0deg);
+    transition-duration: 1s;
+  }
+  
+}
+
+  @keyframes translateMenu{
+    0% {
+      transform: translateY(1em);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0em);
+      opacity: 1;
+    }
+  }
+
+  @keyframes popLogo {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+// tablettes
+@media screen and (min-width : 768px) {
+  /* Styles for this Media Queries */
+
+  .header {
+    position: static;
+    display: flex;
+    background: none;
+    flex-direction: column;
+    &-burger {
+      display: none;
+    }
+  }
+
+  .logo-link {
+    background: linear-gradient(45deg,rgba(18,67,86,.87),rgb(250 251 255 / 49%));
+    margin-top: 3.5rem;
+    height: 150px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .navBar {
+    position: fixed;
+    background: rgba(18,67,86,.87);
+    border-radius: 0;
+    width: 100%;
+    height: 3.5rem;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items:  center;
+    font-weight: 700;
+    font-size: 1.2em;
+    padding: 1rem 0 1rem 1rem;
+    margin-left : 0;
+    margin-top: 0;
+
+    &-link {
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+    }
+
+    
+    &_hidden {
+      display: flex;
+    }
+    
+    &-connected {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items:  center;
+      background: none;
+      &-user {
+        &-icon {
+          margin: 0 1rem;    
+        }
+        }
+
+      &-deconnexion-button {
+        margin: 0 1rem;
+      }
+    } 
+
+  }
+}
+
+
+//desktop
+@media screen and (min-width : 1024px) {
+  /* Styles for this Media Queries */
+  .header {
+    background: linear-gradient(45deg,rgba(18,67,86,.87),rgb(250 251 255 / 49%));
+    align-items: center;
+  }
+
+  .navBar-connected {
+    display: none;
+  }
+
+  .logo-link {
+    background: none;
+    width: 22%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .logo {
+    width: 100%;
+    // display: none;
+  }
+  
+  .navBar {
+    font-weight: 600;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    &-link:hover {
+      color:rgba(12, 44, 56, 0.87);
+      border-radius: 5px;
+      background-color: rgb(222, 221, 226);
+      opacity: 0.5;
+    }
+  }
+  
+  .menu-connected {
+    display: inline-block;
+    position: relative;
+    &-avatar {
+      display: flex;
+      align-items: center;
+      border: none;
+      cursor: pointer;
+      font-size: 1.3rem;
+      //position: relative;
+      padding: 1rem 0;
+     // margin-bottom: 0.5rem;
+      &-icon {
+        margin-right: 1rem;
+      }
+      &-dropdown {
+        padding: 1rem ;  
+        border-radius: 4px;
+        display: none;
+        background-color: rgba(18,67,86,.87);
+        min-width: 135px;
+        position: absolute;
+        left: -1rem;
+      }
+
+      &-dropdown li {
+        border-radius: 5px;
+        display: block;
+        }
+    }
+  }
+
+  .menu-link-admin {
+    padding: .5rem 0 0.5rem .5rem;
+    &:hover {
+      background-color: rgb(222, 221, 226);
+      color:rgba(12, 44, 56, 0.87);
+    }
+  }
+
+  .deconnexion {
+    &-li {
+      padding: .5rem 0;
+      &:hover {
+        background-color: rgb(222, 221, 226);
+        color:rgba(12, 44, 56, 0.87);
+      }
+    }
+    &-button {
+      font-family: 'Nunito';
+      border: none;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      background: transparent;
+      font-size: .8em;
+      &:hover {
+        color:rgba(12, 44, 56, 0.87);
+      }
+    }
+  
+  }
+
+  .menu-connected:hover .menu-connected-avatar-dropdown {
+    display: block;
+    }
+}

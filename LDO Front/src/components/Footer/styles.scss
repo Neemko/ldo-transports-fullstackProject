@@ -1,0 +1,70 @@
+//mobile first
+.footer {
+  min-height: 10vh;
+  background-color: white;
+  border-top: 2px solid rgba(18,67,86,.87);
+  position: absolute;
+  bottom: 0;
+  top: 100%;
+  font-size: 0.9em;
+  padding: 0.8rem;
+  width: 100%;
+  font-weight: 600;
+  color: rgba(18,67,86,.87);
+
+  &-nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    &-item {
+      width: 50%;
+      padding: 1%;
+      text-align: center;
+    }
+    &-link {
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: #a32610;
+        text-decoration-thickness: 0.1em;
+      }
+      &--selected {
+        text-decoration: underline;
+        text-decoration-color: #a32610;
+        text-decoration-thickness: 0.1em;
+      }
+      &-aboutus {
+        font-size: 0.8em;
+        color: grey;
+        &:hover {
+          text-decoration: underline;
+          text-decoration-color: #a32610;
+          text-decoration-thickness: 0.1em;
+        }
+      }
+    }
+  }
+}
+
+
+// tablettes
+@media screen and (min-width : 768px) {
+  /* Styles for this Media Queries */
+}
+
+//desktop
+@media screen and (min-width : 1024px) {
+  /* Styles for this Media Queries */
+  .footer {
+    padding: 1rem;
+    font-size: 1.4em;
+    &-nav {
+      &-item {
+        width: 25%;
+        padding: 1%;
+        text-align: center;
+      }
+    }
+  }
+}
+

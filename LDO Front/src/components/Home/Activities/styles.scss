@@ -1,0 +1,133 @@
+//mobile first
+.activities {
+
+  text-align: center;
+  &-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 3rem 0 1rem 0;
+    color: rgb(18,67,86);
+  }
+  &-content {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-draw {
+      width: 90%;
+      &-ldoTruck {
+        width: 90%;
+        height: auto;
+        margin: 2em 4em 2em 0;
+      }
+      &-ldoFrance {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  &-section {
+    border: solid 2px rgba(18,67,86,.87);
+    border-radius: 15px;
+    width: 80%;
+    position: relative;
+    margin-bottom: 1rem;
+    line-height: 2em;
+    &-description {
+      padding: 1rem;
+    }
+    &-header {
+      padding-top: 2em;
+      &-title {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      }
+      &-subtitle {
+        font-weight: 600;
+        color: rgb(18,67,86);
+      }
+    }
+  }
+}
+
+.contact-link{
+  color: rgba(18,67,86,.87);
+  font-weight: bold;
+  &:hover {
+    font-weight: 900;
+  }
+}
+
+.section-icon {
+  display: inline-block;
+  position: absolute;
+  top: 2rem;
+  left: 1.5rem;
+  font-size: 2em;
+  color: rgb(18,67,86);
+}
+
+
+// tablettes
+@media screen and (min-width : 768px) {
+  /* Styles for this Media Queries */
+  .activities {
+    &-content {
+      &-draw {
+        width: 50%;
+      }
+    }
+  }
+
+}
+
+//desktop
+@media screen and (min-width : 1024px) {
+  /* Styles for this Media Queries */
+
+  .activities {
+    
+    &-title {
+      font-size: 2em;
+      padding: 5rem 0 3rem 0;
+    }
+    &-content {
+      flex-direction: row;
+      flex-wrap : wrap;
+      &-draw {
+        width: 50%;
+        padding: 1rem;
+        &-ldoTruck {
+          width: 40%;
+          height: auto;
+        }
+        &-ldoFrance {
+          padding-top: 1rem;
+          width: 50%;
+          height: auto;
+        }
+      }
+    }
+    &-section {
+      height: 18rem;
+      margin: 2rem;
+      width: calc(50% - 4rem);
+      position: relative;
+      margin-bottom: 0;
+      &-header {
+        &-title {
+          font-size: 1.5em;
+        }
+        &-subtitle {
+          font-size: 1.1em;
+          margin-bottom: 1.5em;
+        }
+      }
+    }
+  }
+  .section-icon {
+    font-size: 3em;
+  }
+}
+
+

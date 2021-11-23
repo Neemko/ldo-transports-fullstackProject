@@ -1,0 +1,84 @@
+//mobile first
+.signin {
+  margin-top: 100px;
+  padding: 1rem 0 0 0;
+  &-content {
+    margin: 1em auto;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    background: rgba(18,67,86,.87);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+
+    &-iconContainer {
+      margin-bottom: 1rem;
+      &-icon {
+        font-size: 2em; 
+        color: white;
+      }
+      
+    }
+
+    &-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+      &-input {
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 4px;
+        border: solid 1px black;
+        outline: none;
+      }
+      &-button {
+        padding: 1rem;
+        width: 70%;
+        background-color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.3em;
+        color: rgba(18,67,86,.87);
+      }
+    }
+  };
+}
+
+
+// tablettes
+@media screen and (min-width : 768px) {
+  /* Styles for this Media Queries */
+}
+
+//desktop
+@media screen and (min-width : 1024px) {
+  /* Styles for this Media Queries */
+  .signin {
+    &-content {
+      width: 40%;
+      border-radius: 10px;
+      padding: 1.5rem 0 3rem 0;
+
+      &-form {
+        &-input{
+          width: 80%;
+        }
+        &-button {
+          width: 50%;
+          &:hover {
+            font-weight: bold
+          }
+        }
+      }
+
+      &-iconContainer {
+        &-icon {
+          font-size: 4em; 
+        }
+      }
+    }
+  }
+
+}

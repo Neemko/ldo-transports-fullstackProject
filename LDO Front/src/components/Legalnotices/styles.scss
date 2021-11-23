@@ -1,0 +1,49 @@
+//mobile first
+
+.legalNotice {
+  margin-top: 100px;
+  padding: 2rem 1rem 0 1rem;
+  &-title {
+    text-align: center;
+    font-size: 2em;
+    text-decoration: underline;
+    text-decoration-color: #a32610;
+  }
+
+  &-container {
+    padding: 1rem;
+    &-content {
+      line-height: 1.5em;
+      margin: 2em 0;
+      text-align: justify;
+    }
+  }
+
+  
+}
+
+
+h2 {
+  margin-bottom: 2em;
+  font-size: 1.5em;
+  line-height: 1.2em;
+}
+
+
+
+
+// tablettes
+@media screen and (min-width : 768px) {
+  /* Styles for this Media Queries */
+  .legalNotice {
+    margin-top: 3rem;
+  }
+}
+
+//desktop
+@media screen and (min-width : 1024px) {
+  /* Styles for this Media Queries */
+  .legalNotice {
+    padding: 2rem 8rem;
+  }
+}
